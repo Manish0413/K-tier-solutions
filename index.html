@@ -122,4 +122,119 @@
       bottom: 20px;
       right: 20px;
       background-color: #25d366;
-      color: whi
+      color: white;
+      border-radius: 50px;
+      padding: 12px 20px;
+      text-decoration: none;
+      font-size: 16px;
+      z-index: 100;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="Logo.jpg" alt="K-Tier Solutions Logo" class="logo" />
+    <h1>K-Tier Solutions</h1>
+    <h2>IT Recruitment & Staffing Services</h2>
+    <p class="description">We specialize in W2 and Full-time staffing solutions, empowering tech professionals to land ideal roles with comprehensive support services tailored for success.</p>
+
+    <form id="candidateForm">
+      <input type="text" name="fullname" placeholder="Full Name" required />
+      <input type="text" name="contact" placeholder="Contact" required />
+      <input type="email" name="email" placeholder="Email ID" required />
+      <input type="text" name="address" placeholder="Full Address" required />
+      <input type="date" name="dob" placeholder="DOB" required />
+      <input type="text" name="ssn" placeholder="Last 5 SSN Digits" required />
+      <input type="text" name="bachelors" placeholder="Bachelors - Degree & Year" required />
+      <input type="text" name="masters" placeholder="Masters - Degree & Year" required />
+      <input type="text" name="visa" placeholder="Visa Status" required />
+      <input type="date" name="entryDate" placeholder="First Entry to US" required />
+      <button type="submit" class="submit-btn">Submit & View Services</button>
+    </form>
+
+    <div class="tabs" id="serviceTabs">
+      <button class="tab-button active" onclick="showTab('tab1')">$1000 Initial Payment</button>
+      <button class="tab-button" onclick="showTab('tab2')">$500 Initial Payment</button>
+    </div>
+
+    <div id="tab1" class="tab-content active">
+      <h3>Services Provided - $1000 Initial Payment</h3>
+      <ul>
+        <li>Resume building</li>
+        <li>Script given based on the resume</li>
+        <li>Visa Script</li>
+        <li>Otter Training</li>
+        <li>Proxy Payment for only First Interview (Candidate pays from 2nd interview)</li>
+        <li>Need to pay $2000 Right after getting Offer letter</li>
+        <li>BGV - Candidate needs to pay</li>
+        <li>Overall charged 15% including Initial payment</li>
+      </ul>
+    </div>
+
+    <div id="tab2" class="tab-content">
+      <h3>Services Provided - $500 Initial Payment</h3>
+      <ul>
+        <li>Resume Building</li>
+        <li>Script given based on resume</li>
+        <li>Visa Script</li>
+        <li>Otter Training</li>
+        <li>Need to Pay $500 after 3 interviews</li>
+        <li>Need to pay $2000 right after confirmation</li>
+        <li>BGV Candidate needs to pay</li>
+        <li>Overall charged 18% (as Candidate paid $500 initially)</li>
+      </ul>
+    </div>
+
+    <p class="note">
+      Note: Initial payment will not be returned in any case. Waiting period to get an Offer is 2-3 months.
+    </p>
+
+    <div class="contact">
+      <p>📧 For queries, email: <a href="mailto:kantu.manish@gmail.com" style="color:#1f90ff;">kantu.manish@gmail.com</a></p>
+      <p>📞 Contact: <a href="tel:+919154038153" style="color:#1f90ff;">+91 9154038153</a></p>
+    </div>
+  </div>
+
+  <a class="whatsapp-float" href="https://wa.me/919154038153" target="_blank">💬 Chat on WhatsApp</a>
+
+  <script>
+    function showTab(tabId) {
+      const tabs = document.querySelectorAll('.tab-content');
+      const buttons = document.querySelectorAll('.tab-button');
+
+      tabs.forEach(tab => tab.classList.remove('active'));
+      buttons.forEach(btn => btn.classList.remove('active'));
+
+      document.getElementById(tabId).classList.add('active');
+      event.target.classList.add('active');
+    }
+
+    document.getElementById('candidateForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = {
+        fullname: form.fullname.value,
+        contact: form.contact.value,
+        email: form.email.value,
+        address: form.address.value,
+        dob: form.dob.value,
+        ssn: form.ssn.value,
+        bachelors: form.bachelors.value,
+        masters: form.masters.value,
+        visa: form.visa.value,
+        entryDate: form.entryDate.value
+      };
+
+      const message = `Candidate Details Form:\nFull Name: ${data.fullname}\nContact: ${data.contact}\nEmail ID: ${data.email}\nFull Address: ${data.address}\nDOB: ${data.dob}\nLast 5 SSN: ${data.ssn}\nFull education details:\nBachelors - ${data.bachelors}\nMasters - ${data.masters}\nVisa Status: ${data.visa}\nDate of First Entry to US: ${data.entryDate}`;
+
+      const encodedMsg = encodeURIComponent(message);
+      const whatsappURL = `https://wa.me/919154038153?text=${encodedMsg}`;
+      window.open(whatsappURL, '_blank');
+
+      document.getElementById('serviceTabs').style.display = 'flex';
+      form.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
