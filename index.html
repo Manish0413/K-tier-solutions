@@ -46,15 +46,11 @@
       margin-bottom: 30px;
     }
 
-    form input, form textarea {
+    form input {
       padding: 10px;
       border-radius: 5px;
       border: none;
       font-size: 1rem;
-    }
-
-    form textarea {
-      grid-column: span 2;
     }
 
     .submit-btn {
@@ -129,7 +125,6 @@
       font-size: 16px;
       z-index: 100;
     }
-
   </style>
 </head>
 <body>
@@ -139,6 +134,7 @@
     <h2>IT Recruitment & Staffing Services</h2>
     <p class="description">We specialize in W2 and Full-time staffing solutions, empowering tech professionals to land ideal roles with comprehensive support services tailored for success.</p>
 
+    <!-- Candidate Details Form -->
     <form id="candidateForm">
       <input type="text" name="fullname" placeholder="Full Name" required />
       <input type="text" name="contact" placeholder="Contact" required />
@@ -153,6 +149,7 @@
       <button type="submit" class="submit-btn">Submit & View Services</button>
     </form>
 
+    <!-- Services Tabs - Hidden initially -->
     <div class="tabs" id="serviceTabs">
       <button class="tab-button active" onclick="showTab('tab1')">$1000 Initial Payment</button>
       <button class="tab-button" onclick="showTab('tab2')">$500 Initial Payment</button>
@@ -196,6 +193,7 @@
     </div>
   </div>
 
+  <!-- WhatsApp Floating Button -->
   <a class="whatsapp-float" href="https://wa.me/919154038153" target="_blank">💬 Chat on WhatsApp</a>
 
   <script>
@@ -232,8 +230,10 @@
       const whatsappURL = `https://wa.me/919154038153?text=${encodedMsg}`;
       window.open(whatsappURL, '_blank');
 
+      // Hide form, show service tabs and content
+      document.getElementById('candidateForm').style.display = 'none';
       document.getElementById('serviceTabs').style.display = 'flex';
-      form.style.display = 'none';
+      document.getElementById('tab1').classList.add('active');
     });
   </script>
 </body>
