@@ -1,182 +1,143 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>K‑Tier Solutions</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>K-Tier Solutions</title>
   <style>
-    }
     body {
-      font-family: 'Roboto', sans-serif;
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      padding: 20px;
-    }
-    header {
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-      header img {
-  display: block;
-  margin: 0 auto 15px auto;
-  height: 1in;       /* 1 inch = 96px */
-  width: auto;       /* maintain aspect ratio */
-  object-fit: contain;
-}
-};
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 5px;
-    }
-    p.description {
-      font-size: 1.1em;
-      margin-top: 0;
-      color: #ccc;
-    }
-    label {
-      display: block;
-      margin-top: 15px;
-      font-weight: bold;
-    }
-    input, textarea {
-      width: 100%;
-      padding: 10px;
-      border: none;
-      border-radius: 6px;
-      margin-top: 5px;
-    }
-    button {
-      background: #ff9800;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('https://images.unsplash.com/photo-1542751110-97427bbecf20') no-repeat center center fixed;
+      background-size: cover;
       color: white;
-      border: none;
-      padding: 12px 20px;
-      font-size: 1em;
-      border-radius: 6px;
-      margin-top: 20px;
-      cursor: pointer;
-      transition: background 0.3s ease;
     }
-    button:hover {
-      background: #e68900;
-    }
-    #plans {
-      display: none;
-      margin-top: 30px;
-    }
-    .tab {
-      cursor: pointer;
-      padding: 12px 20px;
-      background: #ffffff33;
-      display: inline-block;
-      margin-right: 10px;
-      border-radius: 6px;
-      transition: background 0.3s ease;
-    }
-    .tab.active {
-      background: #ffffff55;
-      font-weight: bold;
-    }
-    .plan-content {
-      display: none;
-      margin-top: 20px;
-      background: #ffffff11;
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
       padding: 20px;
+      background-color: rgba(0,0,0,0.75);
       border-radius: 10px;
+      margin-top: 50px;
     }
-    .plan-content.active {
+
+    .logo {
+      display: block;
+      margin: 0 auto 20px;
+      max-width: 200px;
+    }
+
+    h1, h2 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    p.description {
+      text-align: center;
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .tab-button {
+      background-color: #1f6feb;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      margin: 0 10px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .tab-button.active {
+      background-color: #28a745;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
       display: block;
     }
-    #waButton {
-      background: #25D366;
-      padding: 12px 20px;
-      display: inline-block;
+
+    ul {
+      padding-left: 20px;
+      line-height: 1.7em;
+    }
+
+    .note {
       margin-top: 30px;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
+      font-size: 0.95rem;
+      font-style: italic;
+      color: #ffc107;
+      text-align: center;
     }
   </style>
 </head>
 <body>
-  <img src="Logo.jpg" width="150" />
-    <h1>K‑Tier Solutions</h1>
-    <p class="description">IT Recruitment & Staffing – W2 and Full-Time Hiring in the US</p>
-  </header>  <div id="form-section">
-    <h2>Candidate Registration</h2>
-    <form id="infoForm">
-      <label>Full Name<input type="text" name="name" required></label>
-      <label>Contact Number<input type="text" name="contact" required></label>
-      <label>Email<input type="email" name="email" required></label>
-      <label>Full Address<textarea name="address" required></textarea></label>
-      <label>Date of Birth<input type="date" name="dob" required></label>
-      <label>Last 5 digits of SSN<input type="text" name="ssn" maxlength="5" required></label>
-      <label>Bachelors<input type="text" name="bachelors" required></label>
-      <label>Masters<input type="text" name="masters"></label>
-      <label>Visa Status<input type="text" name="visa" required></label>
-      <label>Date of first entry to US<input type="date" name="entryDate" required></label>
-      <button type="submit">Continue to Service Plans</button>
-    </form>
-  </div>  <div id="plans">
-    <div>
-      <span class="tab active" data-plan="plan1">$1000 Plan</span>
-      <span class="tab" data-plan="plan2">$500 Plan</span>
-    </div><div id="plan1" class="plan-content active">
-  <h3>$1000 Initial Payment Plan</h3>
-  <ol>
-    <li>Resume Building</li>
-    <li>Script based on Resume</li>
-    <li>Visa Script</li>
-    <li>Otter Training</li>
-    <li>Proxy for 1st Interview only</li>
-    <li>$2000 after Offer Letter</li>
-    <li>BGV – paid by candidate</li>
-    <li>Total charge 15% (includes initial)</li>
-  </ol>
-</div>
+  <div class="container">
+    <img src="Logo.jpg" alt="K-Tier Solutions Logo" class="logo" />
+    <h1>K-Tier Solutions</h1>
+    <h2>IT Recruitment & Staffing Services</h2>
+    <p class="description">We specialize in W2 and Full-time staffing solutions, empowering tech professionals to land ideal roles with comprehensive support services tailored for success.</p>
 
-<div id="plan2" class="plan-content">
-  <h3>$500 Initial Payment Plan</h3>
-  <ol>
-    <li>Resume Building</li>
-    <li>Script based on Resume</li>
-    <li>Visa Script</li>
-    <li>Otter Training</li>
-    <li>$500 after 3 Interviews</li>
-    <li>$2000 after Confirmation</li>
-    <li>BGV – paid by candidate</li>
-    <li>Total charge 18% (includes initial)</li>
-  </ol>
-</div>
+    <div class="tabs">
+      <button class="tab-button active" onclick="showTab('tab1')">$1000 Initial Payment</button>
+      <button class="tab-button" onclick="showTab('tab2')">$500 Initial Payment</button>
+    </div>
 
-<p><strong>Note:</strong> Initial payment is non‑refundable. Waiting period: 2–3 months.</p>
-<a id="waButton" href="#">Chat via WhatsApp</a>
+    <div id="tab1" class="tab-content active">
+      <h3>Services Provided - $1000 Initial Payment</h3>
+      <ul>
+        <li>Resume building</li>
+        <li>Script given based on the resume</li>
+        <li>Visa Script</li>
+        <li>Otter Training</li>
+        <li>Proxy Payment for only First Interview (Candidate pays from 2nd interview)</li>
+        <li>Need to pay $2000 Right after getting Offer letter</li>
+        <li>BGV - Candidate needs to pay</li>
+        <li>Overall charged 15% including Initial payment</li>
+      </ul>
+    </div>
 
-  </div>  <script>
-    document.querySelectorAll('.tab').forEach(tab => {
-      tab.onclick = () => {
-        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-        document.querySelectorAll('.plan-content').forEach(p => p.classList.remove('active'));
-        tab.classList.add('active');
-        document.getElementById(tab.dataset.plan).classList.add('active');
-      };
-    });
+    <div id="tab2" class="tab-content">
+      <h3>Services Provided - $500 Initial Payment</h3>
+      <ul>
+        <li>Resume Building</li>
+        <li>Script given based on resume</li>
+        <li>Visa Script</li>
+        <li>Otter Training</li>
+        <li>Need to Pay $500 after 3 interviews</li>
+        <li>Need to pay $2000 right after confirmation</li>
+        <li>BGV Candidate needs to pay</li>
+        <li>Overall charged 18% (as Candidate paid $500 initially)</li>
+      </ul>
+    </div>
 
-    document.getElementById('infoForm').onsubmit = e => {
-      e.preventDefault();
-      const data = new FormData(e.target);
-      const message = encodeURIComponent(
-        "New lead:\n" + Array.from(data.entries()).map(x => x[0] + ": " + x[1]).join('\n')
-      );
-      document.getElementById('form-section').style.display = 'none';
-      document.getElementById('plans').style.display = 'block';
-      document.getElementById('waButton').href = `https://wa.me/919154038153?text=${message}`;
-      window.open(`https://wa.me/919154038153?text=${message}`, '_blank');
-    };
-  </script></body>
+    <p class="note">
+      Note: Initial payment will not be returned in any case. Waiting period to get an Offer is 2-3 months.
+    </p>
+  </div>
+
+  <script>
+    function showTab(tabId) {
+      const tabs = document.querySelectorAll('.tab-content');
+      const buttons = document.querySelectorAll('.tab-button');
+
+      tabs.forEach(tab => tab.classList.remove('active'));
+      buttons.forEach(btn => btn.classList.remove('active'));
+
+      document.getElementById(tabId).classList.add('active');
+      event.target.classList.add('active');
+    }
+  </script>
+</body>
 </html>
